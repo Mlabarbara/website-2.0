@@ -1,0 +1,8 @@
+[build]
+  publish = "src/pages"
+  command = "npx tailwindcss -i src/styles/main.css -o src/styles/out.css"
+
+[[headers]]
+  for = "src/styles/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
