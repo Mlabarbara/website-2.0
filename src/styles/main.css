@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        color-scheme: light dark;
+    }
+
+    body {
+        @apply bg-gray-100 text-gray-900 transition-colors duration-200;
+    }
+
+    body.dark {
+        @apply bg-black text-gray-100;
+    }
+}
+
+@layer components {
+    /* Navigation Link Styles */
+    .nav-link {
+        @apply relative text-white px-4 py-2 transition-colors duration-300;
+    }
+
+    .nav-link::after {
+        @apply content-[''] absolute w-0 h-0.5 bottom-0 left-1/2 bg-blue-400 transition-all duration-300 -translate-x-1/2;
+    }
+
+    .nav-link:hover::after {
+        @apply w-4/5;
+    }
+
+    /* Animation Utilities */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .hover-float {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .hover-float:hover {
+        @apply -translate-y-2;
+    }
+
+    /* Headshot Container */
+    .headshot-container {
+        @apply w-52 h-52 mx-auto rounded-full overflow-hidden border-4 border-white/80 shadow-md transition-all duration-300;
+    }
+
+    .headshot-container:hover {
+        @apply scale-105 border-white shadow-lg;
+    }
+
+    .headshot-container img {
+        @apply w-full h-full object-contain object-center scale-150;
+    }
+
+    /* Skill Tags */
+    .skill-tag {
+        @apply bg-blue-600/80 dark:bg-blue-600/40 backdrop-blur px-3 py-1 rounded-full text-white text-sm transition-all duration-300;
+    }
+
+    .skill-tag:hover {
+        @apply -translate-y-0.5 bg-blue-600 dark:bg-blue-600/60;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-8px);
+    }
+}

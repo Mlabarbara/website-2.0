@@ -1,1 +1,46 @@
-<!-- this is just a template for new html pages -->
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Structure - Mark LaBarbara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/styles/out.css">
+</head>
+<body>
+    <!-- Navigation Component -->
+    <site-navigation></site-navigation>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Profile Section -->
+        <section class="profile-section p-8 mb-12 animate-fade-in hover-float">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl font-bold mb-4">Page Structure Template</h1>
+                    <p class="text-xl text-white/90">A base template for all pages</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-card p-8 animate-fade-in" style="animation-delay: 0.2s">
+            <h2 class="text-2xl font-bold mb-4">About This Template</h2>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                This is a base template that demonstrates the new component-based structure.
+                It includes centralized theming, responsive design, and consistent styling patterns.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-6">
+                <span class="skill-tag">Component Based</span>
+                <span class="skill-tag">Responsive</span>
+                <span class="skill-tag">Dark Mode</span>
+                <span class="skill-tag">Centralized Theme</span>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

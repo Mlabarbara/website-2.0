@@ -168,3 +168,6 @@ This plan outlines the migration from the current website's flat and component s
 - Document all decisions
 - Test incrementally
 - Keep backwards compatibility until migration is complete
+
+## Chat Initialization
+See `migration-briefing.md` for detailed instructions on initializing new chat sessions. Copy the entire briefing at the start of each new chat to ensure consistent context and approach.
