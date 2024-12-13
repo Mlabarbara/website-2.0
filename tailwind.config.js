@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export const content = [
     "./src/**/*.{html,js,css}",
+    "./*.{html,js,css}"
 ];
 
 export const darkMode = 'class';
@@ -41,9 +42,8 @@ export const theme = {
         }
     },
 };
-
 export const plugins = [
-    function({ addComponents, theme }) {
+    function({ addComponents, theme, postcss }) {
         addComponents({
             '.nav-header': {
                 '--nav-start': theme('colors.nav.light'),
@@ -80,4 +80,3 @@ export const plugins = [
         });
     }
 ];
-  

@@ -1,4 +1,4 @@
-import { navigationConfig } from '../js/config/navigation.config.js';
+import { navigationConfig } from '../js/config/navigationConfig.js';
 
 class Navigation extends HTMLElement {
     constructor() {

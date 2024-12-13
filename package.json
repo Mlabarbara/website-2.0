@@ -1,10 +1,11 @@
 {
+  "type": "module",
   "name": "website-2.0",
   "version": "2.0.0",
   "description": "Turning labarbara.cc into a component style website",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/styles/main.css -o ./src/styles/out.css --watch",
-    "build": "npx tailwindcss -i ./src/styles/main.css -o ./src/styles/out.css --minify"
+    "dev": "npx postcss ./src/styles/main.css -o ./src/styles/out.css --watch",
+    "build": "npx postcss ./src/styles/main.css -o ./src/styles/out.css --env production"
   },
   "author": {
     "name": "Mark Labarbara",
@@ -12,6 +13,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "tailwindcss": "^3.4.16"
+    "tailwindcss": "^3.4.16",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-nested": "^6.0.1"
   }
 }

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
     :root {
@@ -64,6 +64,15 @@
     .skill-tag:hover {
         @apply -translate-y-0.5 bg-blue-600 dark:bg-blue-600/60;
     }
+}
+
+/* Animation Delays */
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
 }
 
 /* Animations */
