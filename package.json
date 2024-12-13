@@ -1,4 +1,16 @@
 {
+  "name": "website-2.0",
+  "version": "2.0.0",
+  "description": "Turning labarbara.cc into a component style website",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/styles/main.css -o ./src/styles/out.css --watch",
+    "build": "npx tailwindcss -i ./src/styles/main.css -o ./src/styles/out.css --minify"
+  },
+  "author": {
+    "name": "Mark Labarbara",
+    "email": "mark@labarbara.cc"
+  },
+  "license": "MIT",
   "dependencies": {
     "tailwindcss": "^3.4.16"
   }
