@@ -1,10 +1,13 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
     :root {
         color-scheme: light dark;
+        --tw-profile-gradient-light: linear-gradient(135deg, #2563eb, #1e40af, #2563eb);
+        --tw-profile-gradient-dark: linear-gradient(30deg, rgba(34, 25, 162, 0.64), rgba(34, 81, 184, 0.4), rgba(34, 81, 184, 0.77), rgba(34, 81, 184, 0.4), rgba(34, 25, 162, 0.64));
+        --tw-nav-gradient: linear-gradient(135deg, #1e40af, #2563eb, #1e40af);
     }
 
     body {
@@ -17,6 +20,24 @@
 }
 
 @layer components {
+    .profile-section {
+        @apply text-white rounded-xl shadow-md;
+        background-image: var(--tw-profile-gradient-light);
+    }
+
+    .dark .profile-section {
+        background-image: var(--tw-profile-gradient-dark);
+    }
+
+    .nav-header {
+        @apply shadow-lg;
+        background-image: var(--tw-nav-gradient);
+    }
+
+    .dark .nav-header {
+        background: rgb(20, 26, 34);
+    }
+
     /* Navigation Link Styles */
     .nav-link {
         @apply relative text-white px-4 py-2 transition-colors duration-300;
@@ -40,7 +61,25 @@
     }
 
     .hover-float:hover {
-        @apply -translate-y-2;
+        @apply -translate-y-2 shadow-xl;
+    }
+
+    /* Animation Delays */
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    /* Content Card */
+    .content-card {
+        @apply bg-white rounded-xl shadow-md transition-all duration-300;
+    }
+
+    .dark .content-card {
+        @apply bg-[#141a22] text-white;
     }
 
     /* Headshot Container */
@@ -64,15 +103,15 @@
     .skill-tag:hover {
         @apply -translate-y-0.5 bg-blue-600 dark:bg-blue-600/60;
     }
-}
 
-/* Animation Delays */
-.delay-200 {
-    animation-delay: 0.2s;
-}
+    /* Mobile Menu */
+    #mobile-menu {
+        @apply pb-4 transition-all duration-200;
+    }
 
-.delay-400 {
-    animation-delay: 0.4s;
+    .mobile-menu-link {
+        @apply block px-4 py-2 text-white hover:bg-blue-800 dark:hover:bg-gray-700 transition-colors duration-200;
+    }
 }
 
 /* Animations */

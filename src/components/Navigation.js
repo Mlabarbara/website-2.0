@@ -1,18 +1,8 @@
 import { navigationConfig } from '../js/config/navigationConfig.js';
 
 class Navigation extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
-
     connectedCallback() {
-        this.render();
-        this.setupEventListeners();
-    }
-
-    render() {
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
             <nav class="nav-header">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex justify-between h-16">
@@ -80,10 +70,10 @@ class Navigation extends HTMLElement {
     }
 
     setupEventListeners() {
-        const mobileMenuButton = this.shadowRoot.getElementById('mobile-menu-button');
-        const mobileMenu = this.shadowRoot.getElementById('mobile-menu');
-        const themeToggle = this.shadowRoot.getElementById('theme-toggle');
-        const themeToggleMobile = this.shadowRoot.getElementById('theme-toggle-mobile');
+        const mobileMenuButton = this.querySelector('#mobile-menu-button');
+        const mobileMenu = this.querySelector('#mobile-menu');
+        const themeToggle = this.querySelector('#theme-toggle');
+        const themeToggleMobile = this.querySelector('#theme-toggle-mobile');
 
         mobileMenuButton?.addEventListener('click', () => {
             mobileMenu?.classList.toggle('hidden');
