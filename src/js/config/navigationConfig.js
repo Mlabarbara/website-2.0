@@ -8,6 +8,7 @@ export const navigationConfig = {
         { text: 'Blog', href: 'blog.html' },
         { text: 'Projects', href: 'projects.html' },
         { text: 'GitHub', href: 'github.html' },
-        { text: 'Contact', href: 'contact.html' }
+        { text: 'Contact', href: 'contact.html' },
+        { text: 'Template', href: 'template.html' }
     ]
 };

@@ -1,0 +1,38 @@
+theme:
+  colors:
+    primary: '#3B82F6'
+    secondary: '#10B981'
+    background: '#FFFFFF'
+    text: '#1F2937'
+    dark:
+      background: '#1F2937'
+      text: '#F9FAFB'
+  
+  typography:
+    fontFamily: 'Inter, system-ui, sans-serif'
+    baseFontSize: '16px'
+    scale:
+      h1: '2.25rem'
+      h2: '1.875rem'
+      h3: '1.5rem'
+      body: '1rem'
+  
+  spacing:
+    base: '1rem'
+    scale:
+      xs: '0.25'
+      sm: '0.5'
+      md: '1'
+      lg: '1.5'
+      xl: '2'
+  
+  breakpoints:
+    sm: '640px'
+    md: '768px'
+    lg: '1024px'
+    xl: '1280px'
+    
+  darkMode:
+    enabled: true
+    class: 'dark'
+    mediaQuery: true

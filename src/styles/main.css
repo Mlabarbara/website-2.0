@@ -1,136 +1,225 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* main.css begin*/
+/* Base styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@layer base {
-    :root {
-        color-scheme: light dark;
-        --tw-profile-gradient-light: linear-gradient(135deg, #2563eb, #1e40af, #2563eb);
-        --tw-profile-gradient-dark: linear-gradient(30deg, rgba(34, 25, 162, 0.64), rgba(34, 81, 184, 0.4), rgba(34, 81, 184, 0.77), rgba(34, 81, 184, 0.4), rgba(34, 25, 162, 0.64));
-        --tw-nav-gradient: linear-gradient(135deg, #1e40af, #2563eb, #1e40af);
-    }
-
-    body {
-        @apply bg-gray-100 text-gray-900 transition-colors duration-200;
-    }
-
-    body.dark {
-        @apply bg-black text-gray-100;
-    }
+:root {
+    color-scheme: light dark;
 }
 
-@layer components {
-    .profile-section {
-        @apply text-white rounded-xl shadow-md;
-        background-image: var(--tw-profile-gradient-light);
-    }
-
-    .dark .profile-section {
-        background-image: var(--tw-profile-gradient-dark);
-    }
-
-    .nav-header {
-        @apply shadow-lg;
-        background-image: var(--tw-nav-gradient);
-    }
-
-    .dark .nav-header {
-        background: rgb(20, 26, 34);
-    }
-
-    /* Navigation Link Styles */
-    .nav-link {
-        @apply relative text-white px-4 py-2 transition-colors duration-300;
-    }
-
-    .nav-link::after {
-        @apply content-[''] absolute w-0 h-0.5 bottom-0 left-1/2 bg-blue-400 transition-all duration-300 -translate-x-1/2;
-    }
-
-    .nav-link:hover::after {
-        @apply w-4/5;
-    }
-
-    /* Animation Utilities */
-    .animate-fade-in {
-        animation: fadeIn 0.5s ease-out forwards;
-    }
-
-    .hover-float {
-        @apply transition-all duration-300 ease-in-out;
-    }
-
-    .hover-float:hover {
-        @apply -translate-y-2 shadow-xl;
-    }
-
-    /* Animation Delays */
-    .delay-200 {
-        animation-delay: 0.2s;
-    }
-
-    .delay-400 {
-        animation-delay: 0.4s;
-    }
-
-    /* Content Card */
-    .content-card {
-        @apply bg-white rounded-xl shadow-md transition-all duration-300;
-    }
-
-    .dark .content-card {
-        @apply bg-[#141a22] text-white;
-    }
-
-    /* Headshot Container */
-    .headshot-container {
-        @apply w-52 h-52 mx-auto rounded-full overflow-hidden border-4 border-white/80 shadow-md transition-all duration-300;
-    }
-
-    .headshot-container:hover {
-        @apply scale-105 border-white shadow-lg;
-    }
-
-    .headshot-container img {
-        @apply w-full h-full object-contain object-center scale-150;
-    }
-
-    /* Skill Tags */
-    .skill-tag {
-        @apply bg-blue-600/80 dark:bg-blue-600/40 backdrop-blur px-3 py-1 rounded-full text-white text-sm transition-all duration-300;
-    }
-
-    .skill-tag:hover {
-        @apply -translate-y-0.5 bg-blue-600 dark:bg-blue-600/60;
-    }
-
-    /* Mobile Menu */
-    #mobile-menu {
-        @apply pb-4 transition-all duration-200;
-    }
-
-    .mobile-menu-link {
-        @apply block px-4 py-2 text-white hover:bg-blue-800 dark:hover:bg-gray-700 transition-colors duration-200;
-    }
+body {
+    font-family: 'Inter', sans-serif;
+    transition-property: color, background-color;
+    transition-duration: 200ms;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUp {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-8px);
-    }
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
 }
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Navigation styles */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: #60a5fa;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.nav-header {
+    background: linear-gradient(135deg, #1e40af, #2563eb,  #1e40af);
+}
+html.dark .nav-header{
+    background: rgb(20, 26, 34);
+}
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Profile section styles */
+.profile-section {
+    background: linear-gradient(135deg, #2563eb, #1e40af, #2563eb);
+    transition: background 0.3s ease;
+}
+
+html.dark .profile-section {
+    background: linear-gradient(30deg, rgba(34, 25, 162, 0.64), rgba(34, 81, 184, .4), rgba(34, 81, 184, 0.77), rgba(34, 81, 184, .4), rgba(34, 25, 162, 0.64));
+}
+/* Dark mode button styles */
+.dark\:text-gray-100:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246/var(--tw-text-opacity,1));
+}
+
+.dark\:text-white:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity,1));
+}
+
+.dark\:hover\:text-blue-300:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253/var(--tw-text-opacity,1));
+}
+
+.dark\:hover\:bg-gray-700:hover:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background: rgb(55 65 81/var(--tw-bg-opacity,1));
+}
+
+/* Headshot container styles */
+.headshot-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.headshot-container:hover {
+    transform: scale(1.02);
+    border-color: white;
+    box-shadow: 0 6px 12px -1px rgba(0, 0, 0, 0.2);
+}
+
+.headshot-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1.5);
+}
+
+/* Card styles */
+.content-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.dark .content-card {
+    box-shadow: 0 4px 6px -1px rgba(75, 75, 75, 0.2);
+}
+
+/* Hover effects */
+.hover-float {
+    transition: all 0.3s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .hover-float:hover {
+    box-shadow: 0 12px 20px rgba(59, 130, 246, 0.15);
+}
+
+/* Skill tags */
+.skill-tag {
+    background: rgba(37, 99, 235, 0.8);
+    transition: all 0.3s ease;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    color: white;
+    font-size: 0.875rem;
+}
+
+html.dark .skill-tag {
+    background: rgba(37, 99, 235, 0.4);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    background: rgba(37, 99, 235, 1);
+}
+
+html.dark .skill-tag:hover {
+    background: rgba(37, 99, 235, 0.6);
+}
+
+/* Dark mode specific text colors */
+html.dark .dark\:text-white {
+    color: white;
+}
+
+html.dark .dark\:text-gray-300 {
+    color: #d1d5db;
+}
+
+html.dark .dark\:bg-gray-900 {
+    background: rgb(0, 0, 0);
+}
+html.dark .dark\:bg-zinc-900 {
+    background: rgb(20, 26, 34);
+}
+html.dark .dark\:bg-gray-800 {
+    background: rgb(24, 27, 32);
+}
+/* Indent lists  */
+.li-indent {
+    margin-left: 50px;
+  }
+
+/* begin the section for msuu-project display */
+
+.installation-step {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  .installation-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .installation-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .installation-content:not(.hidden) {
+    max-height:fit-content;
+  }
+  .installation-step:last-child {
+    margin-bottom: 50vh; /* This ensures there's enough scroll space */
+  }
+  pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+.prose pre {
+    margin: 0;
+}
+/* main.css end */
