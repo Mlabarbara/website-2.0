@@ -4,8 +4,10 @@
   "version": "2.0.0",
   "description": "Turning labarbara.cc into a component style website",
   "scripts": {
-    "dev": "npx postcss ./src/styles/main.css -o ./src/styles/out.css --watch",
-    "build": "npx postcss ./src/styles/main.css -o ./src/styles/out.css --env production"
+    "dev": "npm run clean && npx postcss ./src/styles/main.css -o ./dist/styles/out.css --watch",
+    "build": "npm run clean && npm run copy-assets && npx postcss ./src/styles/main.css -o ./dist/styles/out.css --env production",
+    "clean": "rm -rf dist/*",
+    "copy-assets": "cp -r src/pages dist/ && cp -r src/assets dist/ && cp -r src/components dist/ && cp -r src/js dist/"
   },
   "author": {
     "name": "Mark Labarbara",
